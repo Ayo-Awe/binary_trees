@@ -13,6 +13,9 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 	if (!tree)
 		return;
 
+	if (!func)
+		return;
+
 	/* Visit node */
 	func(tree->n);
 
