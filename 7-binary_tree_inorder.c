@@ -3,9 +3,10 @@
 /**
  * binary_tree_inorder - goes through a binary tree using inorder
  * traversal and calls a function on each node
- * @node: pointer to node to check
+ * @tree: root node
+ * @func: function pointer
  *
- * Return: 1 if node is a root otherwise 0
+ * Return: void
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
