@@ -1,6 +1,5 @@
 #include "binary_trees.h"
 #include <stdlib.h>
-#include <math.h>
 
 /**
  * is_leaf - checks if a node is a leaf node
@@ -73,6 +72,21 @@ size_t number_of_nodes(const binary_tree_t *tree)
 }
 
 /**
+ * power - raises base to the power of exponent
+ * @base: base number
+ * @exponent: exponent
+ *
+ * Return: base to the power of exponent
+ */
+int power(int base, int exponent)
+{
+	if (exponent == 0)
+		return (1);
+
+	return (power(base, exponent - 1) * base);
+}
+
+/**
  * binary_tree_is_perfect - checks if a binary tree is perfect
  * @tree: pointer to root node
  *
@@ -87,7 +101,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (0);
 
 	/* Total number of nodes in a binary tree of height h is 2^(h+1) - 1*/
-	expected = pow(2, tree_height(tree) + 1) - 1;
+	expected = power(2, tree_height(tree) + 1) - 1;
 	actual = number_of_nodes(tree);
 
 	return (expected == actual);
