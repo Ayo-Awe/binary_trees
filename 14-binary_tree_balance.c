@@ -27,11 +27,11 @@ int is_leaf(const binary_tree_t *node)
  *
  * Return: height of binary tree
  */
-size_t tree_height(const binary_tree_t *tree)
+int tree_height(const binary_tree_t *tree)
 {
-	size_t height_left = 0;
-	size_t height_right = 0;
-	size_t height = 0;
+	int height_left = 0;
+	int height_right = 0;
+	int height = 0;
 
 	/* Height of a NULL node is -1 */
 	if (!tree)
